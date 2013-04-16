@@ -9,14 +9,21 @@
 
 import argparse
 
+def f1():
+    print "f1() called"
+
+
 parser = argparse.ArgumentParser()
 
 # Optional argument.
-parser.add_argument("--verbose", help="Increase output verbosity", action="store_true")
+parser.add_argument("-v","--verbose", help="Increase output verbosity", action="store_true")
+parser.add_argument("-t","--test", help="Testing", action="store_true")
 args = parser.parse_args()
 
 if args.verbose:
     print "Verbosity turned on"
+elif args.test:
+    f1()
 
 #
 #  Result from run:
