@@ -41,8 +41,9 @@ class Car:
 
     def car_information(self):
         print 30*"-"
-        print "Information of:",self.name
+        print "Information for:  ",self.name
         print "Acceleration:     ",self.acceleration,"m/s^2"
+        print "Deacceleration:   ",self.deacceleration,"m/s^2"
         print "Acceleration time:",self.acc_time,"s"
         print 30*"-"
 
@@ -51,7 +52,6 @@ if __name__ == "__main__":
 
     car = Car("Volvo",2.0,4.0,10.0)
     sim_time1 = 11
-    sim_time2 = 6
 
     car.car_information()
 
@@ -62,7 +62,9 @@ if __name__ == "__main__":
         print "    Velocity:",velocity,"m/s"
 
     print "*** stop initated for car ***"
-    for i in range(1,sim_time2):
+    while velocity > 0.01:
         distance,velocity = car.stop(0.1)
         print "    Distance:",distance,"m"
         print "    Velocity:",velocity,"m/s"
+
+    print "*** car stopped ***"
