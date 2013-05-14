@@ -3,10 +3,9 @@
 #   File        : simulate_car.py
 #   Reference   : -
 #   Description :  Calculate the distance and final speed. 
-#                    s = (at^2)/2 + v0*t 
-#                    v = at + v0
-#                  A car is defined by its name, acceleration and acceleration time
+#                  A car is defined by its name, acceleration/deacceleration and acceleration time
 
+time_resolution = 0.1 #seconds
 
 class Car:
     def __init__(self,name,acc,deacc,acc_time):
@@ -18,20 +17,25 @@ class Car:
         self.name           = name      # name of car     
         self.my_time        = 0.0       # current time
 
-    def drive(self,t):
+    def drive(self,log="disabled"):
         # calculate distance and final speed, also keep track of current time
-        self.s       = self.acceleration*t*t/2 + self.v0 * t + self.s
-        self.v0      = self.acceleration*t + self.v0
-        self.my_time = self.my_time + t
-        print "  Current time:",self.my_time,"s"
+        self.s       = self.acceleration*time_resolution*time_resolution/2 + self.v0 * time_resolution + self.s
+        self.v0      = self.acceleration*time_resolution + self.v0
+        self.my_time = self.my_time + time_resolution
+
+        if log == "log_enabled":
+            print "  Current time:",self.my_time,"s"
+
         # return distance and speed
         return self.s,self.v0
 
-    def stop(self,t):
-        self.s       = self.deacceleration*t*t/2 + self.v0 * t + self.s
-        self.v0      = self.v0 - self.deacceleration*t
-        self.my_time = self.my_time + t
-        print "  Current time:",self.my_time,"s"
+    def stop(self,log="disabled"):
+        self.s       = self.deacceleration*time_resolution*time_resolution/2 + self.v0 * time_resolution + self.s
+        self.v0      = self.v0 - self.deacceleration*time_resolution
+        self.my_time = self.my_time + time_resolution
+
+        if log == "log_enabled":
+            print "  Current time:",self.my_time,"s"
 
         # just to fix very small values
         if self.v0 < 0.01:
@@ -51,19 +55,18 @@ class Car:
 if __name__ == "__main__":
 
     car = Car("Volvo",2.0,4.0,10.0)
-    sim_time1 = 11
-
+    sim_time = 11
     car.car_information()
 
     print "*** drive initated for car ***"
-    for i in range(1,sim_time1):
-        distance,velocity = car.drive(0.1)
+    for i in range(1,sim_time):
+        distance,velocity = car.drive("log_enabled")
         print "    Distance:",distance,"m"
         print "    Velocity:",velocity,"m/s"
 
     print "*** stop initated for car ***"
     while velocity > 0.01:
-        distance,velocity = car.stop(0.1)
+        distance,velocity = car.stop("log_enabled")
         print "    Distance:",distance,"m"
         print "    Velocity:",velocity,"m/s"
 
