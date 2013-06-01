@@ -7,6 +7,7 @@
 import simulate_car as SimCar
 
 class Traffic:
+
     def __init__(self,sim_time):
         self.car1 = SimCar.Car("Mazda",3.5,3.0,10.0,1.5)
         self.distance1 = 0.0
@@ -17,6 +18,7 @@ class Traffic:
         self.velocity2 = 0.0
 
         self.sim_time  = sim_time
+
 
     def start(self,log="disabled"):
 

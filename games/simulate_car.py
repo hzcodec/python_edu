@@ -12,8 +12,8 @@ class Car:
     def __init__(self,name,acc,deacc,acc_time,react):
         self.acceleration   = acc       # acceleration m/s^2
         self.deacceleration = deacc     # deacceleration m/s^2
-        self.acc_time       = acc_time  # s
-        self.v0             = 0.0       # initial velocity
+        self.acc_time       = acc_time  # acceleration time
+        self.v0             = 0.0       # initial speed and later current speed
         self.s              = 0.0       # distance
         self.name           = name      # name of car     
         self.my_time        = 0.0       # current time
@@ -23,16 +23,17 @@ class Car:
 
     def drive(self,log="disabled"):
 
+        # wait until the reaction time has elapsed
         if self.my_time < self.reaction_time:
             pass # don't do anything, just sit tight
 
+        # now start to calculate the speed and the distance travelled
         else:
-            # calculate distance and final speed, also keep track of current time
             self.s       = self.acceleration*time_resolution*time_resolution/2 + self.v0 * time_resolution + self.s
             self.v0      = self.acceleration*time_resolution + self.v0
             self.mode = "RUNNING"
 
-        # increment time
+        # also keep track of current time
         self.my_time = self.my_time + time_resolution
 
         # is logging function turned on?
@@ -42,7 +43,7 @@ class Car:
             print "      Velocity:",self.v0,"m/s"
             print "      Mode:    ",self.mode
 
-        # return distance and speed
+        # return distance travelled and speed
         return self.s,self.v0
 
 
