@@ -2,7 +2,8 @@
 #   Date        : 2013-05-30
 #   File        : tk_test1.py
 #   Reference   : -
-#   Description : Tkinter test1.
+#   Description : Create a window with two buttons. Button 'Press' is printing
+#                 Hello in the terminal. Button 'Quit' is closing the window.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
 
 from Tkinter import *

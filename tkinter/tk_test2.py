@@ -2,7 +2,7 @@
 #   Date        : 2013-05-30
 #   File        : tk_test2.py
 #   Reference   : -
-#   Description : Label test.
+#   Description : Create a window with a label.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
 
 from Tkinter import *
