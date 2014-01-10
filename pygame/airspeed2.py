@@ -10,7 +10,6 @@ from pygame.locals import *
 
 # image names used locally
 img_instrument = "image_airspeed.png"
-img_needle     = "image_needle.png"
 
 # initialize the library
 pygame.init()
@@ -20,7 +19,6 @@ instrument_panel = pygame.display.set_mode((640,370),0,32)
 
 # load pictures
 airspeed = pygame.image.load(img_instrument).convert_alpha()
-needle   = pygame.image.load(img_needle).convert_alpha()
 
 while 1:
     for event in pygame.event.get():
@@ -35,12 +33,8 @@ while 1:
     pygame.draw.line(instrument_panel,(0,255,0),(310,0),(310,370))
     pygame.draw.line(instrument_panel,(0,255,0),(0,189),(640,189))
 
-    # put the needle on the airspeed indicator
-    instrument_panel.blit(needle,(287,62))
+    ptr = pygame.draw.rect(instrument_panel,(255,0,0),[309,48,5,150])
+    ptr = pygame.transform.rotate(ptr,90)
 
-    # rotate the needle 90 degrees
-    ptr = pygame.transform.rotate(needle,90)
-    instrument_panel.blit(ptr,(287,62))
-  
     # update the display
     pygame.display.flip() 
