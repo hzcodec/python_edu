@@ -1,3 +1,10 @@
+#   Auther      : Heinz Samuelsson
+#   Date        : 2014-01-11
+#   File        : rotate1.py
+#   Reference   : -
+#   Description : An image of needle is rotated.
+#   Python ver  : 2.7.3 (gcc 4.6.3)
+
 import pygame
 from pygame.locals import *
 
@@ -25,8 +32,9 @@ print("Size of needle rectangle:",needle_size)
 
 screen.blit(other1,(COORDx,COORDy))
 screen.blit(other2,(90,212))
-screen.blit(other3,(200,168))
-screen.blit(other4,(156,210))
+screen.blit(other2,(COORDx,COORDy))
+#screen.blit(other3,(200,168))
+#screen.blit(other4,(156,210))
 
 # draw green cross to point out pivot point of needle
 pygame.draw.line(screen,GREEN,(COORDx+14,80),(COORDx+14,360))
