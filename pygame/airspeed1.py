@@ -46,6 +46,8 @@ while 1:
     pygame.draw.line(instrument_panel,(255,0,0),(317,62),(317,262))
     pygame.draw.line(instrument_panel,(255,0,0),(287,162),(347,162))
 
+    # get size of needle => (60,200)
+    #print needle.get_size()
 
     # rotate the needle 90 degrees
     ptr = pygame.transform.rotate(needle,90)
