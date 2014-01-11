@@ -1,6 +1,6 @@
 #   Auther      : Heinz Samuelsson
 #   Date        : 2014-01-11
-#   File        : rotate1.py
+#   File        : rotate2.py
 #   Reference   : -
 #   Description : An image of needle is rotated.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
@@ -21,8 +21,6 @@ done = False
 screen.fill((0,0,0))
 other1 = pygame.image.load("image_needle.png").convert_alpha()
 other2 = pygame.transform.rotate(other1,90)
-other3 = pygame.transform.rotate(other1,180)
-other4 = pygame.transform.rotate(other1,270)
 
 needle_rect = other1.get_rect()
 #(0,0 - 28,182)
@@ -37,9 +35,6 @@ print("Center of rectangle:",needle_rect_center)
 
 screen.blit(other1,(COORDx,COORDy))
 screen.blit(other2,(90,212))
-screen.blit(other2,(COORDx,COORDy))
-#screen.blit(other3,(200,168))
-#screen.blit(other4,(156,210))
 
 # draw green cross to point out pivot point of needle
 pygame.draw.line(screen,GREEN,(COORDx+14,80),(COORDx+14,360))
