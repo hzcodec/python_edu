@@ -18,7 +18,7 @@ pygame.init()
 # initialize and display the window with 640x370 and name it to instrument_panel
 instrument_panel = pygame.display.set_mode((640,370),0,32)
 
-# load pictures
+# load images
 airspeed = pygame.image.load(img_instrument).convert_alpha()
 needle   = pygame.image.load(img_needle).convert_alpha()
 
@@ -29,7 +29,7 @@ while 1:
             sys.exit()
     
     # put airspeed indicator on panel
-    instrument_panel.blit(airspeed,(130,10))
+    instrument_panel.blit(airspeed,(131,10))
 
     # draw a cross in the middle of the airspeed indicator
     pygame.draw.line(instrument_panel,(0,255,0),(310,0),(310,370))
@@ -38,9 +38,18 @@ while 1:
     # put the needle on the airspeed indicator
     instrument_panel.blit(needle,(287,62))
 
+    # draw vertical line, corresponds to rectangle of needle
+    pygame.draw.line(instrument_panel,(0,0,255),(287,62),(347,262))
+    needle_rect = needle.get_rect()
+
+    # draw a cross in the middle of the needle image
+    pygame.draw.line(instrument_panel,(255,0,0),(317,62),(317,262))
+    pygame.draw.line(instrument_panel,(255,0,0),(287,162),(347,162))
+
+
     # rotate the needle 90 degrees
     ptr = pygame.transform.rotate(needle,90)
     instrument_panel.blit(ptr,(287,62))
-  
+
     # update the display
     pygame.display.flip() 
