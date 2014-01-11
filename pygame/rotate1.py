@@ -1,7 +1,12 @@
 import pygame
 from pygame.locals import *
 
-SIZE = 640,480
+SIZE   = 640,480
+COORDx = 200
+COORDy = 100
+GREEN  = [0,255,0]
+RED    = [255,0,0]
+
 pygame.init()
 screen = pygame.display.set_mode(SIZE)
 
@@ -18,18 +23,18 @@ print("Coordinates for needle rectangle:",needle_rect)
 needle_size = other1.get_size()
 print("Size of needle rectangle:",needle_size)
 
-screen.blit(other1,(200,100))
+screen.blit(other1,(COORDx,COORDy))
 screen.blit(other2,(90,212))
 screen.blit(other3,(200,168))
 screen.blit(other4,(156,210))
 
 # draw green cross to point out pivot point of needle
-pygame.draw.line(screen,(0,255,0),(214,80),(214,360))
-pygame.draw.line(screen,(0,255,0),(100,225),(320,225))
+pygame.draw.line(screen,GREEN,(COORDx+14,80),(COORDx+14,360))
+pygame.draw.line(screen,GREEN,(70,225),(350,225))
 
 # draw red diagonals to mark out the box
-pygame.draw.line(screen,(255,0,0),(200,100),(228,282))
-pygame.draw.line(screen,(255,0,0),(228,100),(200,282))
+pygame.draw.line(screen,RED,(COORDx,COORDy),(COORDx+28,COORDy+182))
+pygame.draw.line(screen,RED,(COORDx+28,COORDy),(COORDx,COORDy+182))
 
 pygame.display.flip()
 
