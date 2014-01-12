@@ -16,8 +16,6 @@ COORDy  = 100
 RED     = [255,0,0]
 GREEN   = [0,255,0]
 BLUE    = [0,0,255]
-YELLOW  = [255,255,0]
-MAGENTA = [255,0,255]
 
 # start values
 x_pos  = 200  # x start position
@@ -32,7 +30,7 @@ def xy_pos(angle,length):
     return (length*x,length*y)
 
 
-# draw new line corresponing to angle
+# draw new line corresponding to angle
 def draw_line(color,x_pos,y_pos,length,new_x,new_y):
     # calculate new position for x value with offset
     t = length - round(new_x)
