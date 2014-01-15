@@ -8,6 +8,10 @@
 import pygame, sys
 from pygame.locals import *
 
+RED   = (255,0,0)
+GREEN = (0,255,0)
+BLUE  = (0,0,255)
+
 # image names used locally
 img_instrument = "image_airspeed.png"
 img_needle     = "image_needle.png"
@@ -33,20 +37,31 @@ instrument_panel = pygame.display.set_mode((640,370),0,32)
 airspeed = pygame.image.load(img_instrument).convert_alpha()
 needle   = pygame.image.load(img_needle).convert_alpha()
 
-for needle_angle in range(0,360):    
+#for needle_angle in range(16,18):    
+#for needle_angle in range(0,10):    
+#for needle_angle in range(260,261):    
+for needle_angle in range(80,81):    
     # put airspeed indicator on panel
     instrument_panel.blit(airspeed,(130,10))
 
     # draw a cross in the middle of the airspeed indicator
-    pygame.draw.line(instrument_panel,(0,255,0),(310,0),(310,370))
-    pygame.draw.line(instrument_panel,(0,255,0),(0,189),(640,189))
+    pygame.draw.line(instrument_panel,GREEN,(310,0),(310,370))
+    pygame.draw.line(instrument_panel,GREEN,(0,189),(640,189))
 
     box_rect = needle.get_rect()
     rot_image,rot_rect = rot_center(needle,box_rect,needle_angle)
-    instrument_panel.blit(rot_image,((267+rot_rect[0]),(83+rot_rect[1])))
+    #instrument_panel.blit(rot_image,((296+rot_rect[0]),(65+rot_rect[1])))
+    #instrument_panel.blit(rot_image,((296+rot_rect[0]+32),(65+rot_rect[1]+38)))
+    instrument_panel.blit(rot_image,((296+rot_rect[0]-31),(65+rot_rect[1]+28)))
+#    print "angle - rot_rect[0]",needle_angle,rot_rect[0]
+#    print "angle - rot_rect[1]",needle_angle,rot_rect[1]
+#    print ""
+    pygame.draw.line(instrument_panel,RED,(310,189),(278,151),3)
+    pygame.draw.line(instrument_panel,BLUE,(310,189),(341,161),3)
 
     # update the display
     pygame.display.flip() 
+
 
 while not done:
    for e in pygame.event.get():
