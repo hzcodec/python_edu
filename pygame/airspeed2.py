@@ -10,6 +10,18 @@ from pygame.locals import *
 
 # image names used locally
 img_instrument = "image_airspeed.png"
+img_needle     = "image_needle.png"
+
+needle_angle = 89 # degrees
+done         = False
+
+# rotate and keep center
+def rot_center(image, rect, angle):
+    """rotate an image while keeping its center"""
+    rot_image = pygame.transform.rotate(image, angle)
+    rot_rect = rot_image.get_rect(center=rect.center)
+    return rot_image,rot_rect
+
 
 # initialize the library
 pygame.init()
@@ -19,13 +31,9 @@ instrument_panel = pygame.display.set_mode((640,370),0,32)
 
 # load pictures
 airspeed = pygame.image.load(img_instrument).convert_alpha()
+needle   = pygame.image.load(img_needle).convert_alpha()
 
-while 1:
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
-    
+for needle_angle in range(0,360):    
     # put airspeed indicator on panel
     instrument_panel.blit(airspeed,(130,10))
 
@@ -33,8 +41,16 @@ while 1:
     pygame.draw.line(instrument_panel,(0,255,0),(310,0),(310,370))
     pygame.draw.line(instrument_panel,(0,255,0),(0,189),(640,189))
 
-    ptr = pygame.draw.rect(instrument_panel,(255,0,0),[309,48,5,150])
-    ptr = pygame.transform.rotate(ptr,90)
+    box_rect = needle.get_rect()
+    rot_image,rot_rect = rot_center(needle,box_rect,needle_angle)
+    instrument_panel.blit(rot_image,((267+rot_rect[0]),(83+rot_rect[1])))
 
     # update the display
     pygame.display.flip() 
+
+while not done:
+   for e in pygame.event.get():
+        if e.type == QUIT or (e.type == KEYDOWN and e.key == K_ESCAPE):
+            done = True
+            break
+
