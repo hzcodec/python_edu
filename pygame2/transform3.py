@@ -8,6 +8,7 @@
 import pygame
 from pygame.locals import *
 import math
+import time
 
 SIZE   = 800,600
 COORDx = 200
@@ -34,7 +35,6 @@ p4 = 0,size_of_rectangle[1]
 rotation_point = size_of_rectangle[0]/2,size_of_rectangle[1]/2
 
 # define offset, where to put the rectangle (in the middle)
-#rectangle_offset = 300,250
 rectangle_offset = 400-(size_of_rectangle[0]/2),300-(size_of_rectangle[1]/2)
 
 
@@ -78,11 +78,11 @@ screen = pygame.display.set_mode(SIZE)
 
 done = False
 
-for rotate_angle in range(0,73):
-    rotate_angle*=5
+for rotate_angle in range(0,80):
     draw_axis()
     rotate(rotate_angle)
     pygame.display.flip()
+    time.sleep(0.12)
     screen.fill((0,0,0))
 
 
