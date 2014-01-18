@@ -49,10 +49,10 @@ def get_coordinates(angle,pxy,rot_point):
 
 # draw each line in the rectangle
 def draw_lines(px1,py1,px2,py2,px3,py3,px4,py4,rect_offset):
-    pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px2+rect_offset[0],py2+rect_offset[1]))
-    pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px4+rect_offset[0],py4+rect_offset[1]))
-    pygame.draw.line(screen,RED,(px4+rect_offset[0],py4+rect_offset[1]),(px3+rect_offset[0],py3+rect_offset[1]))
-    pygame.draw.line(screen,BLUE,(px2+rect_offset[0],py2+rect_offset[1]),(px3+rect_offset[0],py3+rect_offset[1]))
+    pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px2+rect_offset[0],py2+rect_offset[1]),3)
+    pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px4+rect_offset[0],py4+rect_offset[1]),3)
+    pygame.draw.line(screen,RED,(px4+rect_offset[0],py4+rect_offset[1]),(px3+rect_offset[0],py3+rect_offset[1]),3)
+    pygame.draw.line(screen,BLUE,(px2+rect_offset[0],py2+rect_offset[1]),(px3+rect_offset[0],py3+rect_offset[1]),3)
 
 
 # rotate the rectangle
@@ -71,17 +71,16 @@ def draw_axis():
     pygame.draw.line(screen,GREEN,(x_axis/2,0),(x_axis/2,y_axis))
 
 
-
 pygame.init()
 screen = pygame.display.set_mode(SIZE)
 
 done = False
 
-for rotate_angle in range(0,80):
+for rotate_angle in range(0,120):
     draw_axis()
     rotate(rotate_angle)
     pygame.display.flip()
-    time.sleep(0.12)
+    time.sleep(0.1)
     screen.fill((0,0,0))
 
 
