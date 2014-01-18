@@ -1,6 +1,6 @@
 #   Auther      : Heinz Samuelsson
 #   Date        : 2014-01-16
-#   File        : transform2.py
+#   File        : transform3.py
 #   Reference   : -
 #   Description : Rotate a rectangle.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
@@ -16,25 +16,24 @@ COORDy = 100
 RED    = [255,0,0]
 GREEN  = [0,255,0]
 BLUE   = [0,0,255]
-YELLOW = [255,255,0]
-
 
 # define axis for the green cross
 x_axis = 800
 y_axis = 600
 
-# define rectangle
+# define size of rectangle
 size_of_rectangle = 400,100
-# calculate corners of rectangle
+
+# calculate corners of rectangle based on the size of rectangle
 p1 = 0,0
 p2 = size_of_rectangle[0],0
 p3 = size_of_rectangle[0],size_of_rectangle[1]
 p4 = 0,size_of_rectangle[1]
 
-# define rotation point (middle point)
+# define rotation point (middle point) of the rectangle
 rotation_point = size_of_rectangle[0]/2,size_of_rectangle[1]/2
 
-# define offset, where to put the rectangle (in the middle)
+# define offset, where to put the rectangle (in the middle) ref.point = upper left corner
 rectangle_offset = 400-(size_of_rectangle[0]/2),300-(size_of_rectangle[1]/2)
 
 
@@ -80,7 +79,7 @@ for rotate_angle in range(0,120):
     draw_axis()
     rotate(rotate_angle)
     pygame.display.flip()
-    time.sleep(0.1)
+    time.sleep(0.01)
     screen.fill((0,0,0))
 
 
