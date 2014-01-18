@@ -2,7 +2,7 @@
 #   Date        : 2014-01-16
 #   File        : transform2.py
 #   Reference   : -
-#   Description : Rotate a rectangle around different points.
+#   Description : Rotate a rectangle.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
 
 import pygame
@@ -38,6 +38,7 @@ rotation_point = size_of_rectangle[0]/2,size_of_rectangle[1]/2
 rectangle_offset = 400-(size_of_rectangle[0]/2),300-(size_of_rectangle[1]/2)
 
 
+# calculate new corners in the rectangle
 def get_coordinates(angle,pxy,rot_point):
    v = math.pi*angle/180.0
    xn = ((pxy[0]-rot_point[0]) * math.cos(v) - (pxy[1]-rot_point[1]) * math.sin(v)) + rot_point[0]
@@ -46,6 +47,7 @@ def get_coordinates(angle,pxy,rot_point):
    return xn,yn
 
 
+# draw each line in the rectangle
 def draw_lines(px1,py1,px2,py2,px3,py3,px4,py4,rect_offset):
     pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px2+rect_offset[0],py2+rect_offset[1]))
     pygame.draw.line(screen,RED,(px1+rect_offset[0],py1+rect_offset[1]),(px4+rect_offset[0],py4+rect_offset[1]))
@@ -53,6 +55,7 @@ def draw_lines(px1,py1,px2,py2,px3,py3,px4,py4,rect_offset):
     pygame.draw.line(screen,BLUE,(px2+rect_offset[0],py2+rect_offset[1]),(px3+rect_offset[0],py3+rect_offset[1]))
 
 
+# rotate the rectangle
 def rotate(angle):
     px1,py1 = get_coordinates(angle,p1,rotation_point)
     px2,py2 = get_coordinates(angle,p2,rotation_point)
@@ -62,15 +65,11 @@ def rotate(angle):
     draw_lines(px1,py1,px2,py2,px3,py3,px4,py4,rectangle_offset)
 
 
+# draw x-/y-axis
 def draw_axis():
     pygame.draw.line(screen,GREEN,(0,y_axis/2),(x_axis,y_axis/2))
     pygame.draw.line(screen,GREEN,(x_axis/2,0),(x_axis/2,y_axis))
 
-
-def print_values(a,b):
-    print "xn:",a
-    print "yn:",b
-    print ""
 
 
 pygame.init()
