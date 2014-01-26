@@ -1,8 +1,8 @@
 #   Auther      : Heinz Samuelsson
 #   Date        : 2014-01-26
-#   File        : wrap.py
-#   Reference   : Game Programming, page 335.
-#   Description : Wrap a sprite.
+#   File        : bounce.py
+#   Reference   : Game Programming, page 341.
+#   Description : Bounce a sprite.
 #   Python ver  : 2.7.3 (gcc 4.6.3)
 
 import pygame
@@ -27,27 +27,31 @@ class Ball(pygame.sprite.Sprite):
         self.dx = 5
         self.dy = 5
 
+
     def update(self):
 
         oldCenter = self.rect.center
         self.rect.centerx += self.dx
         self.rect.centery += self.dy
+
         pygame.draw.line(self.background,(0,0,0),oldCenter,self.rect.center)
+
         self.checkBounds()
+
 
     def checkBounds(self):
 
-        if self.rect.centerx > self.screen.get_width():
-            self.rect.centerx = 0
+        if self.rect.centerx >= self.screen.get_width():
+            self.dx *= -1
 
-        if  self.rect.centerx < 0:
-            self.rect.centerx = self.screen.get_width()
+        if  self.rect.centerx <= 0:
+            self.dx *= -1
 
-        if self.rect.centery > self.screen.get_height():
-            self.rect.centery = 0
+        if self.rect.centery >= self.screen.get_height():
+            self.dy *= -1
 
-        if  self.rect.centery < 0:
-            self.rect.centery = self.screen.get_height()
+        if  self.rect.centery <= 0:
+            self.dy *= -1
             
 
 def main():
