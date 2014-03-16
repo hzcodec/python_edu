@@ -118,25 +118,29 @@ class Memory():
             return 10
 
     def check_selection(self,pos):
-        print self.rnd_number
-        self.no_of_tries +=1
+        print("rnd_number:",self.rnd_number)
 
-        if (self.no_of_tries == 6):
-           self.no_of_tries = 1
-           del self.rnd_number[:] 
+        if (self.no_of_tries == 5):
+            pygame.draw.rect(self.surface,WHITE,(340,400,255,50))
+            pygame.draw.rect(self.surface,BLACK,(140,400,80,50))
+            pygame.display.flip()
 
-        pic_no = self.get_pic_pos()
-        if (pic_no == self.rnd_number[self.no_of_tries-1]):
-            self.res_label = (self.myfont.render("OK",1,(0,255,0)))
-            print("OK")
         else:
-            self.res_label = (self.myfont.render("FEL",1,(255,0,0)))
-            print("FEL")
-
-        # clear area for result label
-        pygame.draw.rect(self.surface,BLACK,(140,400,80,50))
-        self.surface.blit(self.res_label,(150,400))
-        pygame.display.flip()
+            pic_no = self.get_pic_pos()
+            print("no_of_tries:",self.no_of_tries)
+            if (pic_no == self.rnd_number[self.no_of_tries]):
+                self.res_label = (self.myfont.render("OK",1,(0,255,0)))
+                print("OK")
+            else:
+                self.res_label = (self.myfont.render("FEL",1,(255,0,0)))
+                print("FEL")
+    
+            self.no_of_tries +=1
+    
+            # clear area for result label
+            pygame.draw.rect(self.surface,BLACK,(140,400,80,50))
+            self.surface.blit(self.res_label,(150,400))
+            pygame.display.flip()
 
     # render image on surface
     def on_render_image(self,img,x,y):
