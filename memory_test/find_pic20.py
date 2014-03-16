@@ -9,7 +9,7 @@ GREEN       = (0,255,0)
 BLACK       = (0,0,0)
 WHITE       = (255,255,255)
 # start value of counter values
-START_VALUE = 10 # start value of counter values
+START_VALUE = 20 # start value of counter values
 # mouse button
 LEFT        = 1
 RIGHT       = 3
@@ -38,18 +38,18 @@ class Memory():
         self.surface = pygame.display.set_mode(SCREEN_SIZE)
 
         # build up all images from 10-19
-        self.image.append(pygame.image.load('pic/pic10/emil.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/fish.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/wave.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/lucia.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/hat.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/baby.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/pistol.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/lipstick.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/tiger.jpg').convert())
-        self.image.append(pygame.image.load('pic/pic10/table.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/capsule.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/guitar.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/sugar.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/mat.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/stick.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/cactus.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/castle.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/bee.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/strawberry.jpg').convert())
+        self.image.append(pygame.image.load('pic/pic20/whale.jpg').convert())
 
-        # build up text counter values from 20-29
+        # build up text counter values from 10-19
         for i in range(0,10):
             self.txt_label.append(self.myfont.render(str(i+START_VALUE),1,(255,0,0)))
 
