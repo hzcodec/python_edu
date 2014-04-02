@@ -6,16 +6,19 @@
 #   Description : Generating numbers between 10-99 and its corresponding image.
 #                 Images belonging to 10-19 is group 0.
 #                 Images belonging to 20-29 is group 1 and so on.
+#                 To run you must enter the number of groups to be displayed.
+#                 Ex.
+#                     > python memory_100.py 3
 #   Python ver  : 2.7.3 (gcc 4.6.3)
 
 import pygame
 from pygame.locals import *
 import time
 import random
+import argparse
 
 SCREEN_SIZE  = [800,500] # screen size
 BLACK        = (0,0,0)   # background color
-NO_OF_GROUPS = 5         # number of image groups
 
 
 # group 0
@@ -100,7 +103,7 @@ class Image_50():
 
 class Memory():
 
-    def __init__(self):
+    def __init__(self,grp):
         pygame.init()
         self.surface            = pygame.display.set_mode(SCREEN_SIZE)
         self.myfont             = pygame.font.SysFont("comicsansms",55)
@@ -116,6 +119,7 @@ class Memory():
         self.y                  = 0           # y-pos for image
         self.group              = 0           # image group
         self.txt_label          = self.myfont.render("dummy",1,(255,0,0))
+        self.ngrp               = grp
 
     # render image on surface, the image is scaled
     def on_render_image(self,grp,img,x,y):
@@ -150,7 +154,7 @@ class Memory():
         self.img_rnd_no = self.generate_rnd_number(1,10)
         self.x          = self.generate_rnd_number(5,650)
         self.y          = self.generate_rnd_number(5,390)
-        self.group      = self.generate_rnd_number(0,NO_OF_GROUPS-1)
+        self.group      = self.generate_rnd_number(0,self.ngrp-1)
 
         # calculate the offset depending of group
         offset = self.group*10 + 10
@@ -176,7 +180,13 @@ class Memory():
            
 
 def main():
-    memory_test = Memory()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("par1",help="memory_100.py <no_of_grps>",type=int)
+    args = parser.parse_args()
+    no_of_groups = args.par1
+
+    memory_test = Memory(no_of_groups)
     memory_test.execute()
 
 
