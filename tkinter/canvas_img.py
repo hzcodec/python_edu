@@ -1,3 +1,10 @@
+#   Auther      : Heinz Samuelsson
+#   Date        : 2014-04-21
+#   File        : canvas_img.py
+#   Reference   : -
+#   Description : Load two gif images into a canvas.
+#   Python ver  : 2.7.3 (gcc 4.6.3)
+
 from Tkinter import *
 
 canvas_width = 300
