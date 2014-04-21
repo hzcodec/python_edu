@@ -28,33 +28,45 @@ class App(Frame):
         self.create_canvas()
 
         # create buttons
-        self.create_widgets()
+        self.create_buttons()
 
         
-    # pop up hello message
     def info(self):
+        """
+        Information box.
+        """
         tkMessageBox.showinfo("Information box","INFO")
 
 
-    # switch to red bird
     def switch_bird1(self,img):
+        """
+        Switch to red bird.
+        """
         self.canvas.create_image(50,50,image=img)
         self.canvas.create_text(180,110,font="verdena 14 bold",text="192.168.1.79")
         self.canvas.pack(padx=10,pady=10)
 
 
     def create_canvas(self):
+        """
+        Create a canvas within the top frame.
+        """
         self.canvas = Canvas(self.top,width=CANVAS_WIDTH,height=CANVAS_HEIGHT,
-                             borderwidth = 3,
-                             highlightthickness=0,
-                             background='white',
-                             relief = 'raised')
+                             borderwidth        = 3,
+                             highlightthickness = 0,
+                             background         = 'white',
+                             relief             = 'raised')
 
         self.canvas.create_image(50,50,image=self.img1)
         self.canvas.pack(padx=10,pady=10)
  
 
-    def create_widgets(self):
+    def create_buttons(self):
+        """
+        Create buttons.
+        @param no input parameters
+        @return no return
+        """
 
         self.quit_button = Button(self.top, text="QUIT", fg="red", command=self.top.quit)
         self.quit_button.pack(side=LEFT)
@@ -79,4 +91,3 @@ app = App(root)
 
 root.mainloop() 
 
-#frame = Frame(width=FRAME_WIDTH,height=FRAME_HEIGHT,borderwidth=2,relief=RAISED)
