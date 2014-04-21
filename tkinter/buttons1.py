@@ -1,3 +1,10 @@
+#   Auther      : Heinz Samuelsson
+#   Date        : 2014-04-21
+#   File        : buttons1.py
+#   Reference   : -
+#   Description : Add canvas to a frame.
+#   Python ver  : 2.7.3 (gcc 4.6.3)
+
 from Tkinter import *
 import tkMessageBox
 
