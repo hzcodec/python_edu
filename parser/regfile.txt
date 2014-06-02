@@ -1,0 +1,27 @@
+blockname                    address_offset          comment
+BLOCK1                       0x1000                  Inblock handler 1
+
+registername                 local_address           comment
+ENABLE                       0x0                     Enable function 1
+CONFIG_ALL                   0x1                     Configuration of function 1
+MODE                         0x2                     Set mode on/off
+SOFT_PGM                     0x3                     Program function
+
+
+blockname                    address_offset          comment
+BLOCK2                       0x2000                  Inblock handler 2
+
+registername                 local_address           comment
+EN_CHANNEL_CONFIG_0          0x0                     Enable function 1
+EN_CHANNEL_CONFIG_1          0x1                     Enable function 1
+EN_CHANNEL_CONFIG_2          0x2                     Enable function 1
+
+
+blockname                    address_offset          comment
+BLOCK3                       0x3000                  Inblock handler 3
+
+registername                 local_address           comment
+DEBUG_ON                     0x0                     Debug function ON
+DEBUG_OFF                    0x1                     Debug function OFF
+
+END
