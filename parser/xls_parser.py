@@ -17,6 +17,10 @@ class Workbook:
         # get number of used rows in Register Database sheet
         self.no_of_rows = self.RegisterDatabase_sheet.nrows
 
+        # open out file
+        self.outfile = open('register_file.txt','w')
+        self.outfile.write('Register                                  Address' + '\n')
+
 
     """
       print workbook information
@@ -72,13 +76,25 @@ class Workbook:
     def expand_regname(self,name,offset,var):
 
         if (var == 0):
-	    print '{0:35} - {1:10} - {1:10x}'.format(name,offset,hex(offset))
+	    res = '{0:35} {1:10} {1:10x}'.format(name,offset,hex(offset))
+	    print res
+            self.outfile.write(res + '\n')
+
         else:
             for addr in range(0,var):
                 b = name.find('$')
-                print '{0:35} - {1:10} - {1:10x}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
+                res = '{0:35} {1:10} {1:10x}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
+                print res
+
+                # print to outfile
+                self.outfile.write(res + '\n')
 
         print ''
+        self.outfile.write('\n')
+
+
+    def close_files(self):
+	self.outfile.close()
 
 
 def main():
@@ -86,6 +102,7 @@ def main():
     workbook = Workbook('workbook1.xls')
     workbook.print_workbook_info()
     workbook.print_registers(True)
+    workbook.close_files()
 
 
 if __name__ == '__main__':
