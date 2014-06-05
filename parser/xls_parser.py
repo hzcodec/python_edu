@@ -72,11 +72,11 @@ class Workbook:
     def expand_regname(self,name,offset,var):
 
         if (var == 0):
-	    print '{0:35} - {1:10} - {1:10}'.format(name,offset,hex(offset))
+	    print '{0:35} - {1:10} - {1:10x}'.format(name,offset,hex(offset))
         else:
             for addr in range(0,var):
                 b = name.find('$')
-                print '{0:35} - {1:10} - {1:10}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
+                print '{0:35} - {1:10} - {1:10x}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
 
         print ''
 
