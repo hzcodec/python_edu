@@ -4,9 +4,10 @@ import xlrd
 
 class Workbook:
 
-    def __init__(self):
+    def __init__(self,wb):
 
-        self.workbook = xlrd.open_workbook('workbook1.xls')
+        self.workbook      = xlrd.open_workbook(wb)
+        self.workbook_name = wb
 
         # get sheet names in xls-file
         self.MemoryMap_sheet        = self.workbook.sheet_by_index(0)
@@ -24,6 +25,7 @@ class Workbook:
 
         print 40*'-'
         print '    Workbook information'
+        print 'Spreadsheet name:',self.workbook_name
         print 'Sheet name 1:',self.MemoryMap_sheet.name
         print 'Sheet name 2:',self.RegisterDatabase_sheet.name
         print 'Sheet name 3:',self.GlobalConfig_sheet.name
@@ -37,7 +39,7 @@ class Workbook:
     """
     def print_registers(self,expanded=False):
 
-        print 'Register                                    loop   offset address'
+        print 'Register                                offset address'
 
         # loop over the first row of all cells and print it out
         for i in range(2,self.no_of_rows-1):
@@ -56,8 +58,7 @@ class Workbook:
 		if (expanded):
                     self.expand_regname(reg_name,addr_offset,loop_var)
 		else:
-         	    print reg_name,
-		    print addr_offset
+         	    print '{0:35} - {1:10d}'.format(reg_name,addr_offset)
 
 
     """
@@ -71,22 +72,19 @@ class Workbook:
     def expand_regname(self,name,offset,var):
 
         if (var == 0):
-            print name,
-            print '\t',offset
+	    print '{0:35} - {1:10} - {1:10}'.format(name,offset,hex(offset))
         else:
             for addr in range(0,var):
                 b = name.find('$')
-                print name[0:b]+ str(addr),
-                print '\t',offset+addr
+                print '{0:35} - {1:10} - {1:10}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
 
         print ''
 
 
 def main():
 
-    workbook = Workbook()
+    workbook = Workbook('workbook1.xls')
     workbook.print_workbook_info()
-#    workbook.print_registers()
     workbook.print_registers(True)
 
 
