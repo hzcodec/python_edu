@@ -1,8 +1,25 @@
+# Auther      : Heinz Samuelsson
+# Date        : 2014-06-08
+# File        : xls_parser.py
+# Reference   : -
+# Description : Parse an *.xls file and produce an output text file.
+#               To produce a docstring html file:
+#                 > pydoc -w xls_parser
+#
+# Python ver : 2.7.3 (gcc 4.6.3)
+
 import sys
 import xlrd
 
 
 class Workbook:
+
+    """
+    Workbook class is holding information about the spreadsheet.
+    Its name, the sheet names.
+    It can create a text file holding all registers with its offset address.
+    The addresses are in both decimal and hexadecimal values.
+    """
 
     def __init__(self,wb):
 
@@ -22,10 +39,10 @@ class Workbook:
         self.outfile.write('Register                                  Address' + '\n')
 
 
-    """
-      print workbook information
-    """
     def print_workbook_info(self):
+        """
+          Print workbook information.
+        """
 
         print 40*'-'
         print '    Workbook information'
@@ -37,11 +54,15 @@ class Workbook:
         print 'Number of rows:',self.no_of_rows
         print 40*'-'
 
-    """
-      print out registers
-      [in]   expanded    Expand register names
-    """
+
     def print_registers(self,expanded=False):
+        """
+          Print out all registers extracted from the *.xls file.
+
+	  Args:
+	    expanded: True/False - Default = False. If True then registers
+	              are expanded.
+        """
 
         print 'Register                                offset address'
 
@@ -65,15 +86,16 @@ class Workbook:
          	    print '{0:35} - {1:10d}'.format(reg_name,addr_offset)
 
 
-    """
-      expand register name according to loop variable found in the *.xls sheet
-      CRI_LH_CR_DA_LO_$k => CRI_LH_CR_DA_LO_0
-
-      [in]   name    registername
-      [in]   offset  offset address
-      [in]   var     loop variable from *.xls sheet
-    """
     def expand_regname(self,name,offset,var):
+        """
+          Expand register name according to loop variable found in the *.xls sheet
+          CRI_LH_CR_DA_LO_$k => CRI_LH_CR_DA_LO_0
+
+	  Args:
+            name:   name of register 
+            offset: address offset value 
+            var   : loop variable found in *.xls sheet.
+        """
 
         if (var == 0):
 	    res = '{0:35} {1:10} {1:10x}'.format(name,offset,hex(offset))
@@ -90,11 +112,15 @@ class Workbook:
                 self.outfile.write(res + '\n')
 
         print ''
-        self.outfile.write('\n')
+        self.outfile.writeclose_files('\n')
 
 
     def close_files(self):
 	self.outfile.close()
+
+ 
+    def print_doc(self):
+	print self.print_registers.__doc__
 
 
 def main():
@@ -103,6 +129,7 @@ def main():
     workbook.print_workbook_info()
     workbook.print_registers(True)
     workbook.close_files()
+    workbook.print_doc()
 
 
 if __name__ == '__main__':
