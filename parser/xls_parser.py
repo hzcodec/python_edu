@@ -81,12 +81,12 @@ class Workbook:
 
                 # if expanded selected then print out expanded names and addresses
 		if (expanded):
-                    self.expand_regname(reg_name,addr_offset,loop_var)
+                    self._expand_regname(reg_name,addr_offset,loop_var)
 		else:
          	    print '{0:35} - {1:10d}'.format(reg_name,addr_offset)
 
 
-    def expand_regname(self,name,offset,var):
+    def _expand_regname(self,name,offset,var):
         """
           Expand register name according to loop variable found in the *.xls sheet
           CRI_LH_CR_DA_LO_$k => CRI_LH_CR_DA_LO_0
