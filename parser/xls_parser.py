@@ -98,21 +98,23 @@ class Workbook:
         """
 
         if (var == 0):
-	    res = '{0:35} {1:10} {1:10x}'.format(name,offset,hex(offset))
+            hexaddress = str(hex(offset))
+	    res = '{0:35} {1:10}'.format(name,offset)
 	    print res
-            self.outfile.write(res + '\n')
+            self.outfile.write(res + '      ' + hexaddress + '\n')
 
         else:
             for addr in range(0,var):
-                b = name.find('$')
-                res = '{0:35} {1:10} {1:10x}'.format((name[0:b]+ str(addr)),(offset+addr),hex(offset+addr))
+                b          = name.find('$')
+		hexaddress = str(hex(offset+addr))
+                res = '{0:35} {1:10}'.format((name[0:b]+ str(addr)),(offset+addr))
                 print res
 
                 # print to outfile
-                self.outfile.write(res + '\n')
+                self.outfile.write(res + '      ' + hexaddress + '\n')
 
         print ''
-        self.outfile.writeclose_files('\n')
+        self.outfile.write('\n')
 
 
     def close_files(self):

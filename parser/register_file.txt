@@ -1,122 +1,122 @@
 Register                                  Address
-CRI_LH_CR_DA_LO_0                            0          0
-CRI_LH_CR_DA_LO_1                            1          1
-CRI_LH_CR_DA_LO_2                            2          2
-CRI_LH_CR_DA_LO_3                            3          3
-CRI_LH_CR_DA_LO_4                            4          4
-CRI_LH_CR_DA_LO_5                            5          5
+CRI_LH_CR_DA_LO_0                            0      0x0
+CRI_LH_CR_DA_LO_1                            1      0x1
+CRI_LH_CR_DA_LO_2                            2      0x2
+CRI_LH_CR_DA_LO_3                            3      0x3
+CRI_LH_CR_DA_LO_4                            4      0x4
+CRI_LH_CR_DA_LO_5                            5      0x5
 
-CRI_LH_CR_DA_HI_0                           64         40
-CRI_LH_CR_DA_HI_1                           65         41
-CRI_LH_CR_DA_HI_2                           66         42
-CRI_LH_CR_DA_HI_3                           67         43
-CRI_LH_CR_DA_HI_4                           68         44
-CRI_LH_CR_DA_HI_5                           69         45
+CRI_LH_CR_DA_HI_0                           64      0x40
+CRI_LH_CR_DA_HI_1                           65      0x41
+CRI_LH_CR_DA_HI_2                           66      0x42
+CRI_LH_CR_DA_HI_3                           67      0x43
+CRI_LH_CR_DA_HI_4                           68      0x44
+CRI_LH_CR_DA_HI_5                           69      0x45
 
-CRI_LH_CR_TPID_0                           128         80
-CRI_LH_CR_TPID_1                           129         81
-CRI_LH_CR_TPID_2                           130         82
-CRI_LH_CR_TPID_3                           131         83
-CRI_LH_CR_TPID_4                           132         84
-CRI_LH_CR_TPID_5                           133         85
+CRI_LH_CR_TPID_0                           128      0x80
+CRI_LH_CR_TPID_1                           129      0x81
+CRI_LH_CR_TPID_2                           130      0x82
+CRI_LH_CR_TPID_3                           131      0x83
+CRI_LH_CR_TPID_4                           132      0x84
+CRI_LH_CR_TPID_5                           133      0x85
 
-CRI_LH_CR_VID_0                            192         c0
-CRI_LH_CR_VID_1                            193         c1
-CRI_LH_CR_VID_2                            194         c2
-CRI_LH_CR_VID_3                            195         c3
-CRI_LH_CR_VID_4                            196         c4
-CRI_LH_CR_VID_5                            197         c5
+CRI_LH_CR_VID_0                            192      0xc0
+CRI_LH_CR_VID_1                            193      0xc1
+CRI_LH_CR_VID_2                            194      0xc2
+CRI_LH_CR_VID_3                            195      0xc3
+CRI_LH_CR_VID_4                            196      0xc4
+CRI_LH_CR_VID_5                            197      0xc5
 
-CRI_LH_CR_P_0                              256        100
-CRI_LH_CR_P_1                              257        101
-CRI_LH_CR_P_2                              258        102
-CRI_LH_CR_P_3                              259        103
-CRI_LH_CR_P_4                              260        104
-CRI_LH_CR_P_5                              261        105
+CRI_LH_CR_P_0                              256      0x100
+CRI_LH_CR_P_1                              257      0x101
+CRI_LH_CR_P_2                              258      0x102
+CRI_LH_CR_P_3                              259      0x103
+CRI_LH_CR_P_4                              260      0x104
+CRI_LH_CR_P_5                              261      0x105
 
-CRI_LH_CR_SA_LO_0                          320        140
-CRI_LH_CR_SA_LO_1                          321        141
-CRI_LH_CR_SA_LO_2                          322        142
-CRI_LH_CR_SA_LO_3                          323        143
-CRI_LH_CR_SA_LO_4                          324        144
-CRI_LH_CR_SA_LO_5                          325        145
+CRI_LH_CR_SA_LO_0                          320      0x140
+CRI_LH_CR_SA_LO_1                          321      0x141
+CRI_LH_CR_SA_LO_2                          322      0x142
+CRI_LH_CR_SA_LO_3                          323      0x143
+CRI_LH_CR_SA_LO_4                          324      0x144
+CRI_LH_CR_SA_LO_5                          325      0x145
 
-CRI_LH_CR_SA_HI_0                          384        180
-CRI_LH_CR_SA_HI_1                          385        181
-CRI_LH_CR_SA_HI_2                          386        182
-CRI_LH_CR_SA_HI_3                          387        183
-CRI_LH_CR_SA_HI_4                          388        184
-CRI_LH_CR_SA_HI_5                          389        185
+CRI_LH_CR_SA_HI_0                          384      0x180
+CRI_LH_CR_SA_HI_1                          385      0x181
+CRI_LH_CR_SA_HI_2                          386      0x182
+CRI_LH_CR_SA_HI_3                          387      0x183
+CRI_LH_CR_SA_HI_4                          388      0x184
+CRI_LH_CR_SA_HI_5                          389      0x185
 
-CRI_LH_SR_MAC_ERROR_0                      448        1c0
-CRI_LH_SR_MAC_ERROR_1                      449        1c1
-CRI_LH_SR_MAC_ERROR_2                      450        1c2
-CRI_LH_SR_MAC_ERROR_3                      451        1c3
-CRI_LH_SR_MAC_ERROR_4                      452        1c4
-CRI_LH_SR_MAC_ERROR_5                      453        1c5
+CRI_LH_SR_MAC_ERROR_0                      448      0x1c0
+CRI_LH_SR_MAC_ERROR_1                      449      0x1c1
+CRI_LH_SR_MAC_ERROR_2                      450      0x1c2
+CRI_LH_SR_MAC_ERROR_3                      451      0x1c3
+CRI_LH_SR_MAC_ERROR_4                      452      0x1c4
+CRI_LH_SR_MAC_ERROR_5                      453      0x1c5
 
-CRI_LH_SR_CTRL_0                           512        200
-CRI_LH_SR_CTRL_1                           513        201
-CRI_LH_SR_CTRL_2                           514        202
-CRI_LH_SR_CTRL_3                           515        203
-CRI_LH_SR_CTRL_4                           516        204
-CRI_LH_SR_CTRL_5                           517        205
+CRI_LH_SR_CTRL_0                           512      0x200
+CRI_LH_SR_CTRL_1                           513      0x201
+CRI_LH_SR_CTRL_2                           514      0x202
+CRI_LH_SR_CTRL_3                           515      0x203
+CRI_LH_SR_CTRL_4                           516      0x204
+CRI_LH_SR_CTRL_5                           517      0x205
 
-CRI_LH_SR_RATE_0                           576        240
-CRI_LH_SR_RATE_1                           577        241
-CRI_LH_SR_RATE_2                           578        242
-CRI_LH_SR_RATE_3                           579        243
-CRI_LH_SR_RATE_4                           580        244
-CRI_LH_SR_RATE_5                           581        245
+CRI_LH_SR_RATE_0                           576      0x240
+CRI_LH_SR_RATE_1                           577      0x241
+CRI_LH_SR_RATE_2                           578      0x242
+CRI_LH_SR_RATE_3                           579      0x243
+CRI_LH_SR_RATE_4                           580      0x244
+CRI_LH_SR_RATE_5                           581      0x245
 
-CRI_LH_CR_RATE_DELAY0                      640        280
-CRI_LH_CR_RATE_DELAY1                      641        281
-CRI_LH_CR_RATE_DELAY2                      642        282
-CRI_LH_CR_RATE_DELAY3                      643        283
-CRI_LH_CR_RATE_DELAY4                      644        284
-CRI_LH_CR_RATE_DELAY5                      645        285
+CRI_LH_CR_RATE_DELAY0                      640      0x280
+CRI_LH_CR_RATE_DELAY1                      641      0x281
+CRI_LH_CR_RATE_DELAY2                      642      0x282
+CRI_LH_CR_RATE_DELAY3                      643      0x283
+CRI_LH_CR_RATE_DELAY4                      644      0x284
+CRI_LH_CR_RATE_DELAY5                      645      0x285
 
-CRI_LH_CR_TX_RDI_TIMEOUT0                  704        2c0
-CRI_LH_CR_TX_RDI_TIMEOUT1                  705        2c1
-CRI_LH_CR_TX_RDI_TIMEOUT2                  706        2c2
-CRI_LH_CR_TX_RDI_TIMEOUT3                  707        2c3
+CRI_LH_CR_TX_RDI_TIMEOUT0                  704      0x2c0
+CRI_LH_CR_TX_RDI_TIMEOUT1                  705      0x2c1
+CRI_LH_CR_TX_RDI_TIMEOUT2                  706      0x2c2
+CRI_LH_CR_TX_RDI_TIMEOUT3                  707      0x2c3
 
-CRI_LH_CR_TX_RDI                           768        300
+CRI_LH_CR_TX_RDI                           768      0x300
 
-CRI_LH_CR_TX_AIS                           832        340
+CRI_LH_CR_TX_AIS                           832      0x340
 
-CRI_LH_CR_RX_WD_TIMEOUT0                   896        380
-CRI_LH_CR_RX_WD_TIMEOUT1                   897        381
-CRI_LH_CR_RX_WD_TIMEOUT2                   898        382
-CRI_LH_CR_RX_WD_TIMEOUT3                   899        383
-CRI_LH_CR_RX_WD_TIMEOUT4                   900        384
-CRI_LH_CR_RX_WD_TIMEOUT5                   901        385
+CRI_LH_CR_RX_WD_TIMEOUT0                   896      0x380
+CRI_LH_CR_RX_WD_TIMEOUT1                   897      0x381
+CRI_LH_CR_RX_WD_TIMEOUT2                   898      0x382
+CRI_LH_CR_RX_WD_TIMEOUT3                   899      0x383
+CRI_LH_CR_RX_WD_TIMEOUT4                   900      0x384
+CRI_LH_CR_RX_WD_TIMEOUT5                   901      0x385
 
-CRI_LH_CR_RX_WD_EN                         960        3c0
+CRI_LH_CR_RX_WD_EN                         960      0x3c0
 
-CRI_LH_SR_RX_WD_ALARM                      992        3e0
+CRI_LH_SR_RX_WD_ALARM                      992      0x3e0
 
-CRI_LH_SR_RDI_AIS_IRQ                     1000        3e8
+CRI_LH_SR_RDI_AIS_IRQ                     1000      0x3e8
 
-CRI_LH_SR_WD_ALARM_IRQ                    1008        3f0
+CRI_LH_SR_WD_ALARM_IRQ                    1008      0x3f0
 
-CRI_LH_SR_FLOW_CTRL_CNT_HI_0              1072        430
-CRI_LH_SR_FLOW_CTRL_CNT_HI_1              1073        431
-CRI_LH_SR_FLOW_CTRL_CNT_HI_2              1074        432
-CRI_LH_SR_FLOW_CTRL_CNT_HI_3              1075        433
+CRI_LH_SR_FLOW_CTRL_CNT_HI_0              1072      0x430
+CRI_LH_SR_FLOW_CTRL_CNT_HI_1              1073      0x431
+CRI_LH_SR_FLOW_CTRL_CNT_HI_2              1074      0x432
+CRI_LH_SR_FLOW_CTRL_CNT_HI_3              1075      0x433
 
-CRI_LH_SR_FLOW_CTRL_CNT_LO_0              1136        470
-CRI_LH_SR_FLOW_CTRL_CNT_LO_1              1137        471
-CRI_LH_SR_FLOW_CTRL_CNT_LO_2              1138        472
-CRI_LH_SR_FLOW_CTRL_CNT_LO_3              1139        473
+CRI_LH_SR_FLOW_CTRL_CNT_LO_0              1136      0x470
+CRI_LH_SR_FLOW_CTRL_CNT_LO_1              1137      0x471
+CRI_LH_SR_FLOW_CTRL_CNT_LO_2              1138      0x472
+CRI_LH_SR_FLOW_CTRL_CNT_LO_3              1139      0x473
 
-CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_0          1200        4b0
-CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_1          1201        4b1
-CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_2          1202        4b2
-CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_3          1203        4b3
+CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_0          1200      0x4b0
+CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_1          1201      0x4b1
+CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_2          1202      0x4b2
+CRI_LH_SR_TRAFFIC_FRAME_CNT_HI_3          1203      0x4b3
 
-CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_0          1264        4f0
-CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_1          1265        4f1
-CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_2          1266        4f2
-CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_3          1267        4f3
+CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_0          1264      0x4f0
+CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_1          1265      0x4f1
+CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_2          1266      0x4f2
+CRI_LH_SR_TRAFFIC_FRAME_CNT_LO_3          1267      0x4f3
 
