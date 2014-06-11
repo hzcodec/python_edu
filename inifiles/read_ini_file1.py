@@ -1,4 +1,3 @@
-# 
 #   Auther      : Heinz Samuelsson
 #   Date        : 2014-06-11
 #   File        : read_ini_file1.py
