@@ -1,0 +1,74 @@
+How to copy from laptop to Raspberry PI
+=======================================
+
+  Find out the IP address for RPi by
+    > ifconfig
+  
+  Then at the laptop use
+    > scp 2012-10-14-180555.jpg heinz@192.168.1.84:/home/heinz/Desktop/pic4.jpg
+
+
+Log in to RPi
+=============
+
+  Use Putty.
+ 
+  or
+
+  > ssh 192.168.1.84
+
+  then use password
+
+  > ssh -X heinz@192.168.1.84
+
+
+
+How to remote login with desktop to Raspberry Pi
+================================================
+
+In order to get rdesktop running on Raspi I had to install xrdp
+  http://www.jeremymorgan.com/tutorials/raspberry-pi/how-to-remote-desktop-raspberry-pi/
+  > sudo apt-get install xrdp
+
+ 
+  > rdesktop RaspberryRed
+
+  For full desktop
+  > rdesktop -f RaspberryRed
+
+  Improve experience
+  > rdesktop -z -x lan -P RaspberryRed
+
+  > rdesktop -f -z -x lan -P -p leido999 RaspberryRed
+
+  > rdesktop -g 90% RaspberryRed
+
+for more info
+  http://blog.pi3g.com/2013/04/use-windows-remote-desktop-on-the-raspberry-pi/
+
+
+
+To see if the ssh server is running on Raspi
+============================================
+
+  > sudo service ssh status
+
+
+To grep IP address
+==================
+
+  > ifconfig eth0 | grep inet | cut -c21-32
+
+Problem with ALSA lib
+=====================
+
+  ALSA lib confmisc.c_768:(parse_card) cannot find card '0'
+
+  Need to add your user to the audio group
+  > usermod -G audio -a heinz
+
+================================================================
+
+In order to start up vnc on mobile or pad.
+
+  > tightvncserver

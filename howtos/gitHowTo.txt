@@ -1,0 +1,32 @@
+How to clone from Git repo first time
+=====================================
+
+    > git clone git://github.com/hzcodec/i2c.git
+
+
+How to generate ssh key
+======================
+
+    Reference: https://help.github.com/articles/generating-ssh-keys
+
+    > ssh-keygen -t rsa
+    > ssh-add id_rsa
+   
+
+    1) Then goto "Account Settings" at Github
+    2) Click "SSH Keys"
+    3) Click "Add SSH key"
+    4) Paste key into "Key" field
+    5) Click "Add key"    
+
+
+    I then manage to push to Github.
+    > git push origin master
+
+How to fix 'remote error'
+========================
+    fatal: remote error: 
+      You can't push to git://github.com/hzcodec/c_edu.git
+      Use https://github.com/hzcodec/c_edu.git
+
+  > git remote set-url origin git@github.com:hzcodec/c_edu.git
