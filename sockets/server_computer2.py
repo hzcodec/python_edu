@@ -18,6 +18,9 @@ def main():
   clientHostName = socket.gethostname()
   print 'Client host name: ', clientHostName
 
+  # to get rid of 'Bind failed. Error code: [Errno 98] Address already in use'
+  serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_RESUEADDR, 1)
+
   # get IP address of client
   clientIpAddress = socket.gethostbyame(clientHostName)
   print 'Client IP address: ', clientIpAddress
